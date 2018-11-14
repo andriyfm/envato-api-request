@@ -32,3 +32,11 @@ envato.getTotalItems()
 .catch(err => console.log(err))
 ```
 
+## Methods
+
+#### getSearchItems(params)
+#### getSearchComment(params)
+#### getSearchMoreLikeThis(params)
+#### getTotalItems()
+#### getTotalUsers()
+#### getNumberOfFiles(params)

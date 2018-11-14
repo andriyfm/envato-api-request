@@ -129,6 +129,25 @@ class EnvatoAPI {
     })
   }
 
+  getSearchMoreLikeThis(params) {
+    return new Promise ((resolve, reject) => {
+
+      const item_id = params.item_id
+
+      if (!item_id) {
+        return reject(new Error('params.item_id is required'))
+      }
+      
+      if (typeof(item_id) != 'number') {
+        return reject(new Error('params.item_id type error'))
+      }
+
+      return resolve(this.get({
+        params: params,
+        url: `/discovery/search/search/more_like_this`
+      }))
+    })
+  }
 }
 
 module.exports = function (options) {
