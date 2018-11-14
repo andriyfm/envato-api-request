@@ -1,6 +1,16 @@
 # envato-api-request
 
-Cara mudah berinteraksi dengan Envato API menggunakan **personal token**
+Cara mudah berinteraksi dengan [Envato API](https://build.envato.com/api/) menggunakan **personal token**.
+
+## Instal Package
+
+Sebelum menggunakan package ini, pertama-tama kamu harus membuat **personal token** di [https://build.envato.com](https://build.envato.com/create-token/).
+
+Setelah mendapatkan token-nya, sekarang lakukan penginstall package pada node project kamu:
+
+```bash
+npm i envato-api-request
+```
 
 ## Cara Menggunakan
 
