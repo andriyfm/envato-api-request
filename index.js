@@ -80,10 +80,23 @@ class EnvatoAPI {
     })
   }
 
-  getSearchItems(params) {
-    return this.get({
-      url: `/discovery/search/search/item`,
-      params: params
+  getSearchItem(params) {
+    return new Promise((resolve, reject) => {
+
+      const site = params.site
+
+      if (!site) {
+        return reject(new Error('params.site is required'))
+      }
+
+      if (typeof(site) != 'string') {
+        return reject(new Error('params.site type error'))
+      }
+      
+      return resolve(this.get({
+        url: `/discovery/search/search/item`,
+        params: params
+      }))
     })
   }
 
@@ -396,6 +409,16 @@ class EnvatoAPI {
 
       return resolve(this.get({
         url: `/market/catalog/item-version`,
+        params: params,
+        version: 'v3'
+      }))
+    })
+  }
+
+  getUserCollections(params) {
+    return new Promise((resolve, reject) => {
+      return resolve(this.get({
+        url: `/market/user/collections`,
         params: params,
         version: 'v3'
       }))
