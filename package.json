@@ -1,6 +1,6 @@
 {
   "name": "envato-api-request",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Easily interact with the Envato Market API using a personal token.",
   "main": "index.js",
   "scripts": {
