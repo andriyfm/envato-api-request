@@ -1,3 +1,3 @@
 # envato-api-request
 
-This is just testing only!
+Easily interact with the Envato Market API using a personal token.
