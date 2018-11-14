@@ -281,6 +281,26 @@ class EnvatoAPI {
       }))
     })
   }
+
+  getNewFiles(params) {
+    return new Promise((resolve, reject) => {
+
+      const site = params.site
+      const category = params.category
+
+      if (!site || !category) {
+        return reject(new Error('params.site or params.category is required'))
+      }
+
+      if (typeof(site) != 'string' || typeof(category) != 'string') {
+        return reject(new Error('params.site or params.category type error'))
+      }
+
+      return resolve(this.get({
+        url: `/market/new-files:${site},${category}.json`
+      }))
+    })
+  }
 }
 
 module.exports = function (options) {
