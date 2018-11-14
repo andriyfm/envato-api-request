@@ -1,11 +1,14 @@
 const envato = require('./index')
 const EnvatoAPI = envato({
-  username: 'Actionart',
-  token: 'xl99QdWfWQji6MWCs8N3mUmW9e5TObDY'
+  username: 'YOUR_USERNAME',
+  token: 'YOUR_TOKEN'
 })
 
-const itemID = 233775
+// Samples
+const item_id = 233775
+const site = 'graphicriver'
+const username = 'sevenstyles'
 
-EnvatoAPI.getSearchMoreLikeThis({ item_id: itemID, page_size: 1 })
+EnvatoAPI.getUser({ username })
 .then(files => console.log(files))
 .catch(err => console.log(err))
