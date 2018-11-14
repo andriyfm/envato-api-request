@@ -1,15 +1,9 @@
-const envato = require('./index')
-const EnvatoAPI = envato({
+const EnvatoAPI = require('./index')
+const envato = EnvatoAPI({
   username: 'YOUR_USERNAME',
   token: 'YOUR_TOKEN'
 })
 
-// Samples
-const item_id = 233775
-const site = 'graphicriver'
-const username = 'sevenstyles'
-const category = 'graphics'
-
-EnvatoAPI.getRandomNewFiles({ site })
-.then(files => console.log(files))
+envato.getUserBadges({ username: 'collis' })
+.then(result => console.log(result))
 .catch(err => console.log(err))
