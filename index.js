@@ -118,6 +118,17 @@ class EnvatoAPI {
     })
   }
 
+  getRandomNewFiles(params) {
+    return new Promise((resolve, reject) => {
+      const site = params.site
+      
+      if (!params.site) return reject(new Error('params.site is required'))
+      return resolve(this.get({
+        url: `/market/random-new-files:${site}.json`
+      }))
+    })
+  }
+
 }
 
 module.exports = function (options) {

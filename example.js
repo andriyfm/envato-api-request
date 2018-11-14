@@ -23,8 +23,12 @@ const EnvatoAPI = envato({
 // .then(items => console.log(items.matches.map(item => item.id)))
 // .catch(err => console.log(err))
 
-EnvatoAPI.getSearchComment({
-  item_id: 11
-})
-.then(item => console.log(item))
+// EnvatoAPI.getSearchComment({
+//   item_id: 11
+// })
+// .then(item => console.log(item))
+// .catch(err => console.log(err))
+
+EnvatoAPI.getRandomNewFiles({ site: 'themeforest' })
+.then(files => console.log(files))
 .catch(err => console.log(err))
