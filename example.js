@@ -1,7 +1,7 @@
 const envato = require('./index')
 const EnvatoAPI = envato({
-  username: 'Actionart',
-  token: 'xl99QdWfWQji6MWCs8N3mUmW9e5TObDY'
+  username: 'YOUR_USERNAME',
+  token: 'YOUR_TOKEN_CODE'
 })
 
 // EnvatoAPI.getTotalItems()
