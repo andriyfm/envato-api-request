@@ -8,7 +8,8 @@ const EnvatoAPI = envato({
 const item_id = 233775
 const site = 'graphicriver'
 const username = 'sevenstyles'
+const category = 'graphics'
 
-EnvatoAPI.getUser({ username })
+EnvatoAPI.getRandomNewFiles({ site })
 .then(files => console.log(files))
 .catch(err => console.log(err))
