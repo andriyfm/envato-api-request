@@ -380,6 +380,27 @@ class EnvatoAPI {
       }))
     })
   }
+
+  getCatalogItemVersion(params) {
+    return new Promise((resolve, reject) => {
+
+      const id = params.id
+
+      if (!id) {
+        return reject(new Error('params.id is required'))
+      }
+
+      if (typeof(id) != 'number') {
+        return reject(new Error('params.id type error'))
+      }
+
+      return resolve(this.get({
+        url: `/market/catalog/item-version`,
+        params: params,
+        version: 'v3'
+      }))
+    })
+  }
 }
 
 module.exports = function (options) {
