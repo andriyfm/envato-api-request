@@ -1,0 +1,25 @@
+{
+  "name": "envato-api-request",
+  "version": "1.0.1",
+  "description": "Easily interact with the Envato Market API using a personal token.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "envato",
+    "envato",
+    "api",
+    "envato",
+    "api",
+    "request",
+    "request",
+    "api"
+  ],
+  "author": "andriyfm",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "request": "^2.88.0"
+  }
+}
