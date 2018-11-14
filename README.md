@@ -227,4 +227,37 @@ envato.getNumberOfFiles({ site: 'themeforest' })
 .catch(err => console.log(err))
 ```
 
+## Return
 
+Each method will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which will resolve with the parsed JSON object or reject with an error. The output is not modified, so the output is the same as on [build.envato.com](build.envato.com).
+
+```js
+envato.getUser({ username: 'collis' })
+.then(result => console.log(result))
+.catch(err => console.log(err))
+
+// or
+
+envato.getUser({ username: 'collis' })
+.then(function(result) {
+  console.log(result)
+})
+.catch(function(err) {
+  console.log(err)
+})
+```
+
+## Errors
+
+The `error.message` property will contain the following under these circumstances:
+
+- Bad Request when invalid parameters are sent or required parameters are missing.
+- `Unauthorized` when the personal token is invalid.
+- `Access Denied` when you've reached your rate limit or are banned.
+- `Not Found` when no matches or results were found by the endpoint.
+- `Internal Server Error` when the API is experiencing problems.
+- `Request Error: <message>` when there's an error executing the HTTP request.
+  - Timeout errors
+  - Connection errors
+  - SSL errors
+- `Error code <000>: <message>` when another HTTP code is received than those above.
