@@ -224,6 +224,25 @@ class EnvatoAPI {
       }))
     })
   }
+
+  getPopular(params) {
+    return new Promise((resolve, reject) => {
+
+      const site = params.site
+
+      if (!site) {
+        return reject(new Error('params.site is required'))
+      }
+
+      if (typeof(site) != 'string') {
+        return reject(new Error('params.site type error'))
+      }
+
+      return resolve(this.get({
+        url: `/market/popular:${site}.json`
+      }))
+    })
+  }
 }
 
 module.exports = function (options) {
