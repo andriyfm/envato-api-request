@@ -137,7 +137,7 @@ class EnvatoAPI {
       if (!item_id) {
         return reject(new Error('params.item_id is required'))
       }
-      
+
       if (typeof(item_id) != 'number') {
         return reject(new Error('params.item_id type error'))
       }
@@ -145,6 +145,25 @@ class EnvatoAPI {
       return resolve(this.get({
         params: params,
         url: `/discovery/search/search/more_like_this`
+      }))
+    })
+  }
+
+  getNumberOfFiles(params) {
+    return new Promise ((resolve, reject) => {
+
+      const site = params.site
+      
+      if (!site) {
+        return reject(new Error('params.site is required'))
+      }
+
+      if (typeof(site) != 'string') {
+        return reject(new Error('params.site type error'))
+      }
+
+      return resolve(this.get({
+        url: `/market/number-of-files:${site}.json`
       }))
     })
   }
