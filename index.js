@@ -2,8 +2,6 @@ const Promise = require('bluebird')
 const Request = require('request')
 const querystring = require('querystring')
 
-const token = 'xl99QdWfWQji6MWCs8N3mUmW9e5TObDY'
-
 class EnvatoAPI {
   constructor(options) {
     this.token = options.token
