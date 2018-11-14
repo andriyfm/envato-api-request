@@ -25,7 +25,7 @@ class EnvatoAPI {
     let requestOptions = {
       uri: url,
       method: 'get',
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${this.token}` }
     }
 
     return new Promise ((resolve, reject) => {
@@ -335,6 +335,27 @@ class EnvatoAPI {
 
       return resolve(this.get({
         url: `/market/user-badges:${username}.json`
+      }))
+    })
+  }
+
+  getCatalogCollection(params) {
+    return new Promise((resolve, reject) => {
+
+      const id = params.id
+
+      if (!id) {
+        return reject(new Error('params.id is required'))
+      }
+
+      if (typeof(id) != 'number') {
+        return reject(new Error('params.id type error'))
+      }
+
+      return resolve(this.get({
+        url: `/market/catalog/collection`,
+        params: params,
+        version: 'v3'
       }))
     })
   }
