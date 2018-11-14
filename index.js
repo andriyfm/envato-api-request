@@ -322,6 +322,25 @@ class EnvatoAPI {
     })
   }
 
+  getUserBadges(params) {
+    return new Promise((resolve, reject) => {
+
+      const username = params.username
+
+      if (!username) {
+        return reject(new Error('params.username is required'))
+      }
+
+      if (typeof(username) != 'string') {
+        return reject(new Error('params.username type error'))
+      }
+
+      return resolve(this.get({
+        url: `/market/user-badges:${username}.json`
+      }))
+    })
+  }
+
   getRandomNewFiles(params) {
     return new Promise((resolve, reject) => {
 
