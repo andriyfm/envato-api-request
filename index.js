@@ -75,18 +75,6 @@ class EnvatoAPI {
     })
   }
 
-  getTotalItems () {
-    return this.get({
-      url: '/market/total-items.json'
-    })
-  }
-
-  getTotalUsers () {
-    return this.get({
-      url: `/market/total-users.json`
-    })
-  }
-
   getNumberOfFiles(params) {
     let { site } = params
     return this.get({
@@ -164,6 +152,37 @@ class EnvatoAPI {
 
       return resolve(this.get({
         url: `/market/number-of-files:${site}.json`
+      }))
+    })
+  }
+
+  getTotalUsers() {
+    return this.get({
+      url: `/market/total-users.json`
+    })
+  }
+
+  getTotalItems() {
+    return this.get({
+      url: '/market/total-items.json'
+    })
+  }
+
+  getItemPrices(params) {
+    return new Promise((resolve, reject) => {
+
+      const item_id = params.item_id
+
+      if (!item_id) {
+        return reject(new Error('params.item_id is required'))
+      }
+
+      if (typeof(item_id) != 'number') {
+        return reject(new Error('params.item_id type error'))
+      }
+
+      return resolve(this.get({
+        url: `/market/item-prices:${item_id}.json`
       }))
     })
   }
