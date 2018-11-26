@@ -373,27 +373,6 @@ class EnvatoAPI {
     })
   }
 
-  // getCatalogItem(params) {
-  //   return new Promise((resolve, reject) => {
-
-  //     const id = params.id
-
-  //     if (!id) {
-  //       return reject(new Error('params.id is required'))
-  //     }
-
-  //     if (typeof(id) != 'number') {
-  //       return reject(new Error('params.id type error'))
-  //     }
-
-  //     return resolve(this.get({
-  //       url: `/market/catalog/item`,
-  //       params: params,
-  //       version: 'v3'
-  //     }))
-  //   })
-  // }
-
   getCatalogItemVersion(params) {
     return new Promise((resolve, reject) => {
 
@@ -430,10 +409,6 @@ class EnvatoAPI {
 
       if (!id) {
         return reject(new Error('params.id is required'))
-      }
-
-      if (typeof(id) != 'number') {
-        return reject(new Error('params.id type error'))
       }
       
       return resolve(this.get({
