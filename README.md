@@ -49,12 +49,15 @@ envato.getCatalogCollection({ id: 5087427 , page: 1 })
 .catch(err => console.log(err))
 ```
 
-#### Look up a single item: `getCatalogItem(params)`
+#### Look up a single item: `getLookSingleItem(id)`
 
 Returns all details of a particular item on Envato Market
 
 ```js
-envato.getCatalogItem({ id: 233775 })
+// Envato Item ID
+let itemId = 2833226
+
+envato.getCatalogItem(itemId)
 .then(result => console.log(result))
 .catch(err => console.log(err))
 ```

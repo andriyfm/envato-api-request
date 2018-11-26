@@ -373,26 +373,26 @@ class EnvatoAPI {
     })
   }
 
-  getCatalogItem(params) {
-    return new Promise((resolve, reject) => {
+  // getCatalogItem(params) {
+  //   return new Promise((resolve, reject) => {
 
-      const id = params.id
+  //     const id = params.id
 
-      if (!id) {
-        return reject(new Error('params.id is required'))
-      }
+  //     if (!id) {
+  //       return reject(new Error('params.id is required'))
+  //     }
 
-      if (typeof(id) != 'number') {
-        return reject(new Error('params.id type error'))
-      }
+  //     if (typeof(id) != 'number') {
+  //       return reject(new Error('params.id type error'))
+  //     }
 
-      return resolve(this.get({
-        url: `/market/catalog/item`,
-        params: params,
-        version: 'v3'
-      }))
-    })
-  }
+  //     return resolve(this.get({
+  //       url: `/market/catalog/item`,
+  //       params: params,
+  //       version: 'v3'
+  //     }))
+  //   })
+  // }
 
   getCatalogItemVersion(params) {
     return new Promise((resolve, reject) => {
@@ -420,6 +420,25 @@ class EnvatoAPI {
       return resolve(this.get({
         url: `/market/user/collections`,
         params: params,
+        version: 'v3'
+      }))
+    })
+  }
+
+  getLookSingleItem(id) {
+    return new Promise((resolve, reject) => {
+
+      if (!id) {
+        return reject(new Error('params.id is required'))
+      }
+
+      if (typeof(id) != 'number') {
+        return reject(new Error('params.id type error'))
+      }
+      
+      return resolve(this.get({
+        url: '/market/catalog/item',
+        params: { id },
         version: 'v3'
       }))
     })
